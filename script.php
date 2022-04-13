@@ -10,6 +10,30 @@ $categorias[] = 'adulto';
 $nome = $_POST['nome'];
 $idade = $_POST['idade'];
 
+if(empty($nome)){
+    echo 'O campo nome não pode ser vazio.';
+    return;
+}
+if(strlen($nome) < 3){
+    echo 'O nome deve conter mais que 3 caracteres.';
+    return;
+}
+
+if(strlen($nome) > 30) {
+    echo 'O nome não pode conter mais que 30 caracteres.';
+    return;
+}
+
+if(empty($idade)){
+    echo 'O campo idade não pode ser vazio.';
+    return;
+}
+
+if(!is_numeric($idade)) {
+    echo 'Informe um número para a idade.';
+    return;
+}
+
 //var_dump($nome);
 //var_dump($idade);
 
